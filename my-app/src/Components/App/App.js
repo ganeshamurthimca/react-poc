@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import {
-    Button,
-    Paper,
-    TextField,
-    Snackbar,
-    Alert as MuiAlert,
-} from '@mui/material';
+import { Button, Paper, TextField, Snackbar, Alert as MuiAlert } from '@mui/material';
 import axios from 'axios';
 
 function App() {
@@ -32,12 +25,10 @@ function App() {
             tempErrors.firstName = 'First Name is required';
             isValid = false;
         }
-
         if (!customer.lastName || customer.lastName.trim() === '') {
             tempErrors.lastName = 'Last Name is required';
             isValid = false;
         }
-
         if (!customer.email || customer.email.trim() === '') {
             tempErrors.email = 'Email is required';
             isValid = false;
@@ -45,7 +36,6 @@ function App() {
             tempErrors.email = 'Email is not valid';
             isValid = false;
         }
-
         // Optional: Add phone validation if necessary
 
         setErrors(tempErrors);
@@ -57,7 +47,6 @@ function App() {
             ...customer,
             [e.target.name]: e.target.value,
         });
-
         // Clear validation error for the field
         setErrors({
             ...errors,
